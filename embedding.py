@@ -1,0 +1,15 @@
+from langchain_huggingface import HuggingFaceEmbeddings
+
+embeddings = HuggingFaceEmbeddings(
+    model_name="sentence-transformers/all-MiniLM-L6-v2"
+)
+
+text = "عامل هوشمند محیط خود را درک می‌کند."
+
+vector = embeddings.embed_query(text)
+
+print("Embedding:")
+print(vector)
+
+print("Vector length:")
+print(len(vector))
